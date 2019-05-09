@@ -86,8 +86,8 @@ class FrenchToDateTimeTransformer implements DataTransformerInterface {
         if($frenchDate === null){
            throw new TransformationFailedException("Vous devez fournir une date !");
         }
-        $date = \DateTime::createFromFormat('d/m/y',$frenchDate);
-        if($date == fasle){
+        $date = \DateTime::createFromFormat('d/m/Y',$frenchDate);
+        if($date == false){
             throw new TransformationFailedException("Le format de la date n'est pas le bon");
         }
         return $date;
